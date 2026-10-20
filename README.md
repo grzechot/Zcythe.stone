@@ -49,13 +49,31 @@ The same as [Zcythe](https://github.com/grzechot/Zcythe.3d-printer-bed-probe#par
   adjustment at the same time
 - M3 bolts as in Zcythe (M3x6 for the optosensor, M3x10 for the pivot)
 
+## Assembly instructions
+
+For now the same as [Zcythe](https://github.com/grzechot/Zcythe.3d-printer-bed-probe#assembly-instructions)
+(K1Flag = ZFlag, K1Support = ZSupport), except the tip:
+
+1. Press both bearings into the slot in the K1Flag. Leave no space between them.
+2. Screw the M3 rounded-head screw into the K1Flag (instead of heat pressing the ball). It must turn with a little
+   resistance and keep its position – it is the height adjustment.
+3. Heat press the magnets into both parts, as the brass insert. Mind the polarity!
+4. Desolder the socket of the endstop and solder it on the same side as the optosensor.
+5. Prepare the K1Support: remove the printed supports, press fit the optosensor, secure it with one M3x6 bolt.
+   When preparing the cables, mind the polarity!
+6. Paint the flag surfaces black or silver as in Zcythe. Cut 0.5 mm of the edge.
+7. Heat press the brass insert, the narrow part stays outside.
+8. Screw the K1Flag to the K1Support with an M3x10 bolt. Check the bearings: the lever must rotate without any
+   resistance, and the painted surfaces must not touch the optosensor. Adjust the brass insert if needed.
+9. Test the magnets and the motion many times – the assembly must withstand tens of thousands of cycles.
+
 ## Adjustments
 
 - **Tip screw (M3, rounded head):** sets how high the tip sits relative to the bed. About 0.4–0.55 mm per turn,
   **loosening raises the tip**. Target: Stone triggers ~0.2 mm before Zcythe would touch the bed
   ("K1 margin" 0.2 ± 0.15 mm). If the nozzle triggers Stone *lower* than Zcythe touches the bed, the Zcythe
   needle gets pushed into the bed and latches closed.
-- **Dead-zone screw:** moves the flag in the slot – changes the trigger point, not the rest height of the tip.
+- **Dead-zone screw** (new prototype, not tested yet): moves the flag in the slot – changes the trigger point, not the rest height of the tip.
   Recommended 0.05–0.15 mm. Too far and the flag sits on the beam edge: the sensor switches by itself.
 
 After any adjustment of the bed sheet or of Stone the calibration constants have to be measured again
