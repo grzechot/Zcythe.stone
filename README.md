@@ -16,6 +16,17 @@ print – no paper, no feeler gauge, no babystepping after a nozzle change. The 
 Status: **working prototype** on one printer (400 × 400 CoreXY, RepRapFirmware 3.6.1). Photos, a video and assembly
 instructions will follow; the dead-zone adjustment is going to be redesigned.
 
+## Which printers, requirements
+
+- CoreXY with a Z bed (Voron Trident, RatRig V-Core … – tested on a 4-Z CoreXY), flying gantry (Voron 2.4),
+  bed slingers (Stone on the moving bed carriage), Cartesian printers – anywhere Stone can be fixed rigidly to the
+  bed or its frame.
+- **The nozzle must travel about 15 mm beyond the bed edge** to reach Stone (and so must Zcythe on the toolhead).
+- Firmware: RepRapFirmware (macros in Zcythe Field, tested on RRF 3.6.1).
+
+Measured accuracy, diagnostics (bed and hotend thermal expansion, bed sag, Z drive faults) and the full list of
+printer types: see the Zcythe Field README.
+
 ## How it works
 
 An M3 screw with a rounded head sits on the short arm of a lever, the long arm carries a flag in the slot of an
