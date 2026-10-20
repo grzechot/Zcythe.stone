@@ -31,9 +31,14 @@ Before every print the printer:
 From these three heights it computes the nozzle height at the moment Zcythe triggers. One constant – how far the
 nozzle pushes the ball before the switch (dead travel) – is calibrated once with a first-layer print.
 
+## Files
+
+- `stl/` – parts to print, `cad/` – STEP / CAD sources, `pic/` – photos.
+- Videos: links here (YouTube), not stored in the repository.
+
 ## Parts
 
-- printed lever and base – ABS (STL to be added)
+- printed lever and base – ABS (`stl/`, to be added)
 - opto endstop 5 V (same type as in Zcythe)
 - ball for the top (R ≈ 5 mm)
 - M3 screw for the height adjustment, M3 screw for the dead-zone adjustment
