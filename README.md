@@ -19,10 +19,11 @@ instructions will follow; the dead-zone adjustment is going to be redesigned.
 ## Which printers, requirements
 
 - CoreXY with a Z bed (Voron Trident, RatRig V-Core … – tested on a 4-Z CoreXY), flying gantry (Voron 2.4),
-  bed slingers (Stone on the moving bed carriage), Cartesian printers – anywhere Stone can be fixed rigidly to the
+  bed slingers (Stone on the moving bed carriage), Cartesian printers, deltas (untested) – anywhere Stone can be fixed rigidly to the
   bed or its frame.
 - **The nozzle must travel about 15 mm beyond the bed edge** to reach Stone (and so must Zcythe on the toolhead).
-- Firmware: RepRapFirmware (macros in Zcythe Field, tested on RRF 3.6.1).
+- Firmware: RepRapFirmware (macros in Zcythe Field, tested on RRF 3.6.1); Klipper / Marlin untested – same principle,
+  the macros need porting.
 
 Measured accuracy, diagnostics (bed and hotend thermal expansion, bed sag, Z drive faults) and the full list of
 printer types: see the Zcythe Field README.
