@@ -8,9 +8,10 @@ printer presses the nozzle onto it. Together they let the printer find its own Z
 print – no paper, no feeler gauge, no babystepping after a nozzle change. The system that uses both is
 **Zcythe Field** (macros and procedure, separate repository).
 
-- Repeatability of the nozzle dives: ~0.002 mm (σ), two agreeing dives within 0.006 mm
+- Repeatability of the nozzle dives: ~0.002 mm (σ, previous short-lever version), two agreeing dives within 0.006 mm
 - Rounded top (the head of an M3 screw) – the nozzle does not have to be centred exactly; position is found from the curvature
-- Same principle as Zcythe: an opto endstop and a lever that multiplies the motion
+- Same principle as Zcythe: an opto endstop and a lever that multiplies the motion – here a long one, 14 : 200 mm
+  (≈ 1 : 14), so 0.003 mm at the tip is ≈ 0.04 mm at the optosensor
 - Printable (ABS)
 
 Status: **working prototype** on one printer (400 × 400 CoreXY, RepRapFirmware 3.6.1). Photos, a video and assembly
@@ -30,8 +31,10 @@ printer types: see the Zcythe Field README.
 
 ## How it works
 
-An M3 screw with a rounded head sits on the short arm of a lever, the long arm carries a flag in the slot of an
-opto endstop. The nozzle presses the screw head down; after a small travel the flag leaves the beam and the sensor switches. The Zcythe probe on
+A long, thin lever runs along the edge of the bed. Its short arm (14 mm from the pivot) carries an M3 screw with a
+rounded head – the tip – next to the bed corner; the long arm (200 mm) ends with a flag in the slot of an opto endstop
+at the far end. The nozzle presses the screw head down; after a small travel the flag leaves the beam and the sensor
+switches. The Zcythe probe on
 the toolhead is too light to trigger it – only the nozzle does.
 
 Before every print the printer:
@@ -93,8 +96,8 @@ After any adjustment of the bed sheet or of Stone the calibration constants have
 
 ## Mounting
 
-- Screw it to the **bed frame**, not to the bed sheet, outside the print area (author: beside the right edge,
-  apex at about X425 Y322 in probe coordinates).
+- Screw it to the **bed frame**, not to the bed sheet, outside the print area, with the lever along the bed edge
+  and the tip next to a bed corner within reach of the nozzle and of Zcythe.
 - Stone triggers only from a vertical push; sideways it reacts only to a push in −Y. Do not drag the nozzle over it.
 - Do not press the tip far beyond the trigger point – repeated over-travel lowers the trigger height.
 
