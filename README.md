@@ -65,7 +65,7 @@ nozzle pushes the head before the switch (dead travel) – is calibrated once wi
 
 ## Video
 
-[Zcythe Field in action – Zcythe + Stone v2](YOUTUBE_LINK_TODO) (28 s; earlier: [how Zcythe works](https://www.youtube.com/watch?v=oTdeM-AWUHY)): 0:00 Zcythe dives on the Stone tip, 0:07 close-up of the
+[Zcythe Field in action – Zcythe + Stone v2](https://youtu.be/-OZQV1-SDUw) (28 s; earlier: [how Zcythe works](https://www.youtube.com/watch?v=oTdeM-AWUHY)): 0:00 Zcythe dives on the Stone tip, 0:07 close-up of the
 cross of dives (the red LED is the Zcythe optosensor), 0:19 the nozzle on the Stone tip and the whole 200 mm lever.
 
 ## Files
