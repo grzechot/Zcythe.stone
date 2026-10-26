@@ -31,18 +31,22 @@ print – no paper, no feeler gauge, no babystepping after a nozzle change. The 
   (≈ 1 : 14), so 0.003 mm at the tip is ≈ 0.04 mm at the optosensor
 - Printable (ABS)
 
-Status: **working prototype, work in progress** – one printer (400 × 400 CoreXY, RepRapFirmware 3.6.1). Photos and
-v2-specific assembly instructions will follow; the dead-zone screw is a new, untested prototype.
+Status: **working prototype, work in progress** – one printer (400 × 400 CoreXY, RepRapFirmware 3.6.1). v2-specific
+assembly instructions will follow; the dead-zone screw is a new, untested prototype.
 
 ## Versions
 
 | Version | Lever | Bearings | Status |
 |---|---|---|---|
-| **v1** (until 26 Oct 2026) | compact, Zcythe-like | 3x7x3, 2 pcs | worked; repeatability of the nozzle dives σ ≈ 0.002 mm |
-| **v2** (since 26 Oct 2026) | long and thin, along the bed edge: 14 mm (tip) / 200 mm (optosensor), ≈ 1 : 14 | **3x8x4**, 2 pcs | in testing |
+| **v1** (until 26 Oct 2026) | shorter | 3x7x3, 2 pcs | worked; repeatability of the nozzle dives σ ≈ 0.002 mm – STL in `stl/v1/` |
+| **v2** (since 26 Oct 2026) | long and thin, along the bed edge: 14 mm (tip) / 200 mm (optosensor), ≈ 1 : 14 | **3x8x4**, 2 pcs | in testing – STL in `stl/` |
 
 A larger bearing seems to give a smoother, more repeatable lever motion – v2 may work better with an even larger
 one. **Work in progress.**
+
+![Zcythe Stone v1 (on the bed) and v2 (mounted on the bed frame)](pic/stone_v1_v2.jpg)
+
+![The optosensor ends of v1 and v2](pic/stone_v1_v2_sensor_end.jpg)
 
 ## Which printers, requirements
 
@@ -85,7 +89,7 @@ cross of dives (the red LED is the Zcythe optosensor), 0:19 the nozzle on the St
 
 The same as [Zcythe](https://github.com/grzechot/Zcythe.3d-printer-bed-probe#parts), except the ball:
 
-- printable: `stl/K1Flag.stl` and `stl/K1Support.stl` (version to be confirmed: v1 / v2). Recommended material – ABS.
+- printable: `stl/K1Flag.stl` and `stl/K1Support.stl` (v2; v1 in `stl/v1/`). Recommended material – ABS.
 - optosensor 5 V (the same type as in Zcythe)
 - bearings, 2 pcs: 3x7x3 (v1) or **3x8x4 (v2)**. Soak in grease before use (hot paraffin bath works).
 - 5x5 mm brass heat insert with collar
