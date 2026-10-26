@@ -8,7 +8,7 @@ printer presses the nozzle onto it. Together they let the printer find its own Z
 print – no paper, no feeler gauge, no babystepping after a nozzle change. The system that uses both is
 **Zcythe Field** (macros and procedure, separate repository).
 
-- Repeatability of the nozzle dives: ~0.002 mm (σ, previous short-lever version), two agreeing dives within 0.006 mm
+- Repeatability of the nozzle dives: ~0.002 mm (σ, v1), two agreeing dives within 0.006 mm
 - Rounded top (the head of an M3 screw) – the nozzle does not have to be centred exactly; position is found from the curvature
 - Same principle as Zcythe: an opto endstop and a lever that multiplies the motion – here a long one, 14 : 200 mm
   (≈ 1 : 14), so 0.003 mm at the tip is ≈ 0.04 mm at the optosensor
@@ -16,6 +16,16 @@ print – no paper, no feeler gauge, no babystepping after a nozzle change. The 
 
 Status: **working prototype** on one printer (400 × 400 CoreXY, RepRapFirmware 3.6.1). Photos, a video and assembly
 instructions will follow; the dead-zone adjustment is going to be redesigned.
+
+## Versions
+
+| Version | Lever | Bearings | Status |
+|---|---|---|---|
+| **v1** (until 26 Oct 2026) | compact, Zcythe-like | 3x7x3, 2 pcs | worked; repeatability of the nozzle dives σ ≈ 0.002 mm |
+| **v2** (since 26 Oct 2026) | long and thin, along the bed edge: 14 mm (tip) / 200 mm (optosensor), ≈ 1 : 14 | **3x8x4**, 2 pcs | in testing |
+
+A larger bearing seems to give a smoother, more repeatable lever motion – v2 may work better with an even larger
+one. **Work in progress.**
 
 ## Which printers, requirements
 
@@ -57,7 +67,7 @@ The same as [Zcythe](https://github.com/grzechot/Zcythe.3d-printer-bed-probe#par
 
 - printable: `stl/K1Flag.stl` and `stl/K1Support.stl`. Recommended material – ABS.
 - optosensor 5 V (the same type as in Zcythe)
-- 3x7x3 bearing, 2 pcs. Soak in grease before use (hot paraffin bath works).
+- bearings, 2 pcs: 3x7x3 (v1) or **3x8x4 (v2)**. Soak in grease before use (hot paraffin bath works).
 - 5x5 mm brass heat insert with collar
 - 0.5x5 mm magnet, 2 pcs
 - **instead of the 3.2 mm ball: an M3 screw with a rounded head** – it is the measuring tip and the K1 height
