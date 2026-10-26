@@ -6,7 +6,15 @@ The companion of [Zcythe](https://github.com/grzechot/Zcythe.3d-printer-bed-prob
 Zcythe measures the bed; **Zcythe Stone** measures the nozzle. It sits on the bed frame beside the bed, and the
 printer presses the nozzle onto it. Together they let the printer find its own Z offset (`G31 Z`) before every
 print – no paper, no feeler gauge, no babystepping after a nozzle change. The system that uses both is
-**Zcythe Field** (macros and procedure, separate repository).
+[Zcythe Field](https://github.com/grzechot/Zcythe.field) (macros and procedure).
+
+**The Zcythe family:**
+
+- **Zcythe** – bed probe on the toolhead (K0) – [Zcythe.3d-printer-bed-probe](https://github.com/grzechot/Zcythe.3d-printer-bed-probe)
+- **Zcythe Stone** – nozzle sensor beside the bed (K1) *(this repository)*
+- **Zcythe Field** – the system: RepRapFirmware macros, calibration, tools, docs – [Zcythe.field](https://github.com/grzechot/Zcythe.field)
+
+**Highlights:**
 
 - Repeatability of the nozzle dives: ~0.002 mm (σ, v1), two agreeing dives within 0.006 mm
 - Rounded top (the head of an M3 screw) – the nozzle does not have to be centred exactly; position is found from the curvature
@@ -14,8 +22,8 @@ print – no paper, no feeler gauge, no babystepping after a nozzle change. The 
   (≈ 1 : 14), so 0.003 mm at the tip is ≈ 0.04 mm at the optosensor
 - Printable (ABS)
 
-Status: **working prototype** on one printer (400 × 400 CoreXY, RepRapFirmware 3.6.1). Photos, a video and assembly
-instructions will follow; the dead-zone adjustment is going to be redesigned.
+Status: **working prototype, work in progress** – one printer (400 × 400 CoreXY, RepRapFirmware 3.6.1). Photos and
+v2-specific assembly instructions will follow; the dead-zone screw is a new, untested prototype.
 
 ## Versions
 
@@ -37,15 +45,14 @@ one. **Work in progress.**
   the macros need porting.
 
 Measured accuracy, diagnostics (bed and hotend thermal expansion, bed sag, Z drive faults) and the full list of
-printer types: see the Zcythe Field README.
+printer types: see the [Zcythe Field README](https://github.com/grzechot/Zcythe.field).
 
 ## How it works
 
 A long, thin lever runs along the edge of the bed. Its short arm (14 mm from the pivot) carries an M3 screw with a
 rounded head – the tip – next to the bed corner; the long arm (200 mm) ends with a flag in the slot of an opto endstop
 at the far end. The nozzle presses the screw head down; after a small travel the flag leaves the beam and the sensor
-switches. The Zcythe probe on
-the toolhead is too light to trigger it – only the nozzle does.
+switches. The Zcythe probe on the toolhead is too light to trigger it – only the nozzle does.
 
 Before every print the printer:
 
@@ -56,16 +63,20 @@ Before every print the printer:
 From these three heights it computes the nozzle height at the moment Zcythe triggers. One constant – how far the
 nozzle pushes the head before the switch (dead travel) – is calibrated once with a first-layer print.
 
+## Video
+
+[Zcythe Field in action – Zcythe + Stone v2](YOUTUBE_LINK_TODO) (28 s; earlier: [how Zcythe works](https://www.youtube.com/watch?v=oTdeM-AWUHY)): 0:00 Zcythe dives on the Stone tip, 0:07 close-up of the
+cross of dives (the red LED is the Zcythe optosensor), 0:19 the nozzle on the Stone tip and the whole 200 mm lever.
+
 ## Files
 
-- `stl/` – parts to print, `cad/` – STEP / CAD sources, `pic/` – photos.
-- Videos: links here (YouTube), not stored in the repository.
+- `stl/` – parts to print, `cad/` – STEP / CAD sources, `pic/` – photos. Videos are on YouTube (links above).
 
 ## Parts
 
 The same as [Zcythe](https://github.com/grzechot/Zcythe.3d-printer-bed-probe#parts), except the ball:
 
-- printable: `stl/K1Flag.stl` and `stl/K1Support.stl`. Recommended material – ABS.
+- printable: `stl/K1Flag.stl` and `stl/K1Support.stl` (version to be confirmed: v1 / v2). Recommended material – ABS.
 - optosensor 5 V (the same type as in Zcythe)
 - bearings, 2 pcs: 3x7x3 (v1) or **3x8x4 (v2)**. Soak in grease before use (hot paraffin bath works).
 - 5x5 mm brass heat insert with collar
@@ -102,13 +113,13 @@ For now the same as [Zcythe](https://github.com/grzechot/Zcythe.3d-printer-bed-p
   Recommended 0.05–0.15 mm. Too far and the flag sits on the beam edge: the sensor switches by itself.
 
 After any adjustment of the bed sheet or of Stone the calibration constants have to be measured again
-(see Zcythe Field).
+(see [Zcythe Field](https://github.com/grzechot/Zcythe.field/blob/main/docs/procedures.md)).
 
 ## Mounting
 
 - Screw it to the **bed frame**, not to the bed sheet, outside the print area, with the lever along the bed edge
   and the tip next to a bed corner within reach of the nozzle and of Zcythe.
-- Stone triggers only from a vertical push; sideways it reacts only to a push in −Y. Do not drag the nozzle over it.
+- Stone triggers only from a vertical push (v1: sideways only to a push in −Y). Do not drag the nozzle over it.
 - Do not press the tip far beyond the trigger point – repeated over-travel lowers the trigger height.
 
 ## Configure (RepRapFirmware)
@@ -120,7 +131,7 @@ M558 K1 P8 C"e0stop" H3 F60 T6000 A1
 G31 K1 P500 X0 Y0 Z0
 ```
 
-The nozzle dives on Stone at 30 mm/min. The calibration macros (`HesCal2`) are in Zcythe Field.
+The nozzle dives on Stone at 30 mm/min. The calibration macros (`HesCal2`) are in [Zcythe Field](https://github.com/grzechot/Zcythe.field).
 
 ## Test
 
